@@ -1,4 +1,4 @@
-import 'package:abroad/pages/home_page.dart';
+import 'package:abroad/pages/home_screen.dart';
 import 'package:abroad/pages/signup_screen.dart';
 import 'package:abroad/welcome_screen.dart';
 import 'package:flutter/material.dart';
@@ -7,7 +7,7 @@ import 'firebase_options.dart';
 
 void main()async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'My App',
-      home: HomePage(),
+      home: SignUpScreen(),
     );
   }
 }
