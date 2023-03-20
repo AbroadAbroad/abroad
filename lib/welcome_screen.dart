@@ -1,4 +1,4 @@
-import 'package:abroad/signup_screen.dart';
+import 'package:abroad/pages/signup_screen.dart';
 import 'package:flutter/material.dart';
 
 class WelcomeScreen extends StatelessWidget {
