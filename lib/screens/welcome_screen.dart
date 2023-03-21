@@ -1,3 +1,4 @@
+import 'package:abroad/screens/signin_screen.dart';
 import 'package:abroad/screens/signup_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -32,11 +33,11 @@ class WelcomeScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 50),
+              const SizedBox(height: 50),
               Transform.translate(
                 offset: Offset(0, -20),
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 50.0),
+                child: const Padding(
+                  padding: EdgeInsets.only(left: 50.0),
                   child: Text(
                     'Welcome!',
                     style: TextStyle(
@@ -47,7 +48,7 @@ class WelcomeScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Transform.translate(
                 offset: Offset(0, -30),
                 child: Padding(
@@ -61,7 +62,7 @@ class WelcomeScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 50),
+              const SizedBox(height: 50),
               Center(
                 child: Column(
                   children: [
@@ -82,9 +83,14 @@ class WelcomeScreen extends StatelessWidget {
                         backgroundColor: Colors.transparent,
                       ),
                     ),
-                    SizedBox(height: 10),
+                    const SizedBox(height: 10),
                     ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute( builder: (context) => SignInScreen()),
+                        );
+                      },
                       child: Text("Sign In"),
                       style: ElevatedButton.styleFrom(
                         minimumSize: Size(200, 50),
@@ -95,7 +101,6 @@ class WelcomeScreen extends StatelessWidget {
                         backgroundColor: Colors.transparent,
                       ),
                     ),
-
                   ],
                 ),
               ),

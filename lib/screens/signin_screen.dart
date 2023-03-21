@@ -16,7 +16,6 @@ class _SignInScreenState extends State<SignInScreen> {
 
   TextEditingController _passwordTextController = TextEditingController();
   TextEditingController _emailTextController = TextEditingController();
-  TextEditingController _userNameTextController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {return Scaffold(
@@ -127,7 +126,7 @@ class _SignInScreenState extends State<SignInScreen> {
                               width: 1),
                           shape: BoxShape.circle,
                         ),
-                        child: Center(
+                        child: const Center(
                           child: Text("OR",
                           style: TextStyle(
                             color: Colors.white,
@@ -136,14 +135,13 @@ class _SignInScreenState extends State<SignInScreen> {
                           ),
                         ),
                       ),
-                      SizedBox(height: 20),
+                      const SizedBox(height: 20),
                       signInSignUpButton(context, false, (){
                         Navigator.push(context,
                             MaterialPageRoute(builder: (context) => SignUpScreen()));
                       }),
-
-                    ],
-                  ),
+                  ],
+                ),
               ],
             ),
           ],
