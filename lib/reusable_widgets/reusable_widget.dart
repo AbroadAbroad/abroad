@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+
+
 TextField reusableTextField(String text, IconData icon, bool isPasswordType,
     TextEditingController controller) {
   return TextField (
@@ -8,8 +10,11 @@ TextField reusableTextField(String text, IconData icon, bool isPasswordType,
       enableSuggestions: !isPasswordType,
       autocorrect: !isPasswordType,
       cursorColor: Colors.white,
-      style: TextStyle(color: Colors.white.withOpacity(0.9)),
+      style: TextStyle(
+          fontSize: 12,
+          color: Colors.white.withOpacity(0.9)),
     decoration: InputDecoration(
+      prefixIcon: Icon(icon, color: Colors.white70,),
       labelText: text,
       labelStyle: TextStyle(color: Colors.white.withOpacity(0.9)),
       filled: true,
@@ -22,6 +27,34 @@ TextField reusableTextField(String text, IconData icon, bool isPasswordType,
         borderSide: BorderSide(color: Colors.white, width: 2),
       ),
     ),
-      keyboardType: isPasswordType ? TextInputType.visiblePassword : TextInputType.emailAddress,
+      keyboardType: isPasswordType
+          ? TextInputType.visiblePassword
+          : TextInputType.emailAddress,
       );
+}
+
+
+Container signInSignUpButton(
+    BuildContext context, bool isLogin, Function onTap) {
+   return Container(
+    decoration: BoxDecoration (borderRadius: BorderRadius.circular(90)),
+     child: Center(
+       child: ElevatedButton(
+        onPressed: () {
+          onTap();
+        },
+         child: Text(
+          isLogin ? 'LOG IN' : 'SIGN UP',
+          ),
+         style: ElevatedButton.styleFrom(
+           minimumSize: const Size(320, 50),
+           shape: RoundedRectangleBorder(
+             borderRadius: BorderRadius.circular(30),
+             side: const BorderSide(color: Colors.white, width: 2),
+           ),
+           backgroundColor: Colors.transparent,
+         ),
+       ),
+     ),
+   );
 }

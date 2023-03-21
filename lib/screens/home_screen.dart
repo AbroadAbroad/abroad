@@ -1,4 +1,4 @@
-import 'package:abroad/pages/signup_screen.dart';
+import 'package:abroad/screens/signup_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
