@@ -53,6 +53,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     "Sign Up and get started",
                     style: TextStyle(
                       fontSize: 12,
+                      fontWeight: FontWeight.bold,
                       color: Colors.white,
                     ),
                   ),
@@ -82,7 +83,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 Center(
                   child: SizedBox(
                     width: 320,
-                    child: reusableTextField("Password", Icons.lock_outline, false, _passwordTextController),
+                    child: reusableTextField("Password", Icons.lock_outline, true, _passwordTextController),
                     ),
                   ),
                 const SizedBox(height: 50),

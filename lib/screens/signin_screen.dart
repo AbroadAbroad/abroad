@@ -53,6 +53,7 @@ class _SignInScreenState extends State<SignInScreen> {
                     "Sign In and get started",
                     style: TextStyle(
                       fontSize: 12,
+                      fontWeight: FontWeight.bold,
                       color: Colors.white,
                     ),
                   ),
@@ -70,7 +71,7 @@ class _SignInScreenState extends State<SignInScreen> {
                   child: SizedBox(
                     height: 75,
                     width: 320,
-                    child: reusableTextField("Password", Icons.lock_outline, false, _passwordTextController),
+                    child: reusableTextField("Password", Icons.lock_outline, true, _passwordTextController),
                     ),
                   ),
                 const SizedBox(height: 50),
@@ -81,14 +82,16 @@ class _SignInScreenState extends State<SignInScreen> {
                       password: _passwordTextController.text).then((value) {
                         Navigator.push(context,
                             MaterialPageRoute(builder: (context) => HomeScreen()));
+                  }).onError((error, stackTrace) {
+                      print("Error ${error.toString()}");
                   });
                 }),
 
-                const SizedBox(height: 20),
+                const SizedBox(height: 50),
                   Column(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      const SizedBox(height: 20),
+                      const SizedBox(height: 50),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -114,7 +117,7 @@ class _SignInScreenState extends State<SignInScreen> {
                           ),
                         ],
                       ),
-                      const SizedBox(height: 80),
+                      const SizedBox(height: 20),
                       Container(
                         width: 40,
                         height: 40,
