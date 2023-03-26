@@ -1,24 +1,30 @@
-import 'package:abroad/screens/signin_screen.dart';
-import 'package:abroad/screens/welcome_screen.dart';
-import 'package:abroad/screens/signup_screen.dart';
-import 'package:abroad/screens/home_screen.dart';
+import 'package:abroad/repository/authentication_repository/authentication_repository.dart';
+import 'package:abroad/src/features/authentication/screens/home/home_screen.dart';
+import 'package:abroad/src/features/authentication/screens/login/login_screen.dart';
+import 'package:abroad/src/features/authentication/screens/signup/signup_screen.dart';
+import 'package:abroad/src/features/authentication/screens/welcome/welcome_screen.dart';
+import 'package:abroad/src/utils/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:get/get.dart';
 import 'firebase_options.dart';
 
 void main()async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform)
+      .then((value) => Get.put(AuthenticationRepository()));
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'My App',
-      home: WelcomeScreen(),
+      theme: TAppTheme.lightTheme,
+      darkTheme: TAppTheme.darkTheme,
+      themeMode: ThemeMode.light,
+      home: SignUpScreen(),
     );
   }
 }

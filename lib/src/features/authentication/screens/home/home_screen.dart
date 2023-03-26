@@ -1,6 +1,7 @@
-import 'package:abroad/screens/signup_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+
+import '../signup/signup_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -15,7 +16,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       body: Center(
         child: ElevatedButton(
-          child: Text("Logout"),
+          child: const Text("Logout"),
           onPressed: () {
             FirebaseAuth.instance.signOut().then((value) {
               print("Signed Out");
