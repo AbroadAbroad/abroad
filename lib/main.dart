@@ -1,6 +1,7 @@
 import 'package:abroad/repository/authentication_repository/authentication_repository.dart';
 import 'package:abroad/src/features/authentication/screens/home/home_screen.dart';
 import 'package:abroad/src/features/authentication/screens/login/login_screen.dart';
+import 'package:abroad/src/features/authentication/screens/profile/profile_screen.dart';
 import 'package:abroad/src/features/authentication/screens/signup/signup_screen.dart';
 import 'package:abroad/src/features/authentication/screens/welcome/welcome_screen.dart';
 import 'package:abroad/src/utils/theme/theme.dart';
@@ -22,9 +23,8 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       theme: TAppTheme.lightTheme,
-      darkTheme: TAppTheme.darkTheme,
       themeMode: ThemeMode.light,
-      home: SignUpScreen(),
+      home: ProfileScreen(),
     );
   }
 }

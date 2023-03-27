@@ -7,6 +7,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 class LoginScreen extends StatelessWidget {
   const LoginScreen({Key? key}) : super(key: key);
 
+
   @override
   Widget build(BuildContext context) {
 
@@ -29,7 +30,8 @@ class LoginScreen extends StatelessWidget {
                 const Text(
                   tLoginTitle,
               style: TextStyle(
-                fontSize: 24,
+                color: Colors.white,
+                fontSize: 30,
                 fontWeight: FontWeight.bold,
               ),
               textAlign: TextAlign.start,
@@ -37,7 +39,8 @@ class LoginScreen extends StatelessWidget {
                 const Text(
                   tLoginSubTitle,
                   style: TextStyle(
-                    fontSize: 12,
+                    color: Colors.white,
+                    fontSize: 14,
                   ),
                   textAlign: TextAlign.center,
                 ),
@@ -80,14 +83,14 @@ class LoginScreen extends StatelessWidget {
                   children: [
                     const Text(tDontHaveAnAccount,
                     style: TextStyle(
-                        fontSize: 12,
-                    fontWeight: FontWeight.w400),
+                      color: Colors.white,
+                      fontSize: 12,
+                      fontWeight: FontWeight.w400),
                     ),
                     const SizedBox(height: 10),
                     SizedBox(
                       width: double.infinity,
                       child: ElevatedButton(onPressed: (){},
-                        child: const Text(tSignup),
                         style: ElevatedButton.styleFrom(
                           minimumSize: const Size(320, 50),
                           shape: RoundedRectangleBorder(
@@ -96,6 +99,7 @@ class LoginScreen extends StatelessWidget {
                           ),
                           backgroundColor: Colors.transparent,
                         ),
+                        child: const Text(tSignup),
                       ),
                     ),
                   ]

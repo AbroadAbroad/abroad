@@ -49,6 +49,7 @@ dependencies:
   google_maps_flutter_web: ^0.4.0+7
   get_it: ^7.2.0
   flutter_native_splash: ^2.2.19
+  line_awesome_flutter: ^2.0.0
 
 
 dev_dependencies:
@@ -78,6 +79,7 @@ flutter:
     - assets/images/welcome_images/
     - assets/images/signin_images/
     - assets/images/signup_images/
+    - assets/images/profile_images/
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.

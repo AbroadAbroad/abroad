@@ -23,6 +23,9 @@ class SignUpFormWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             TextFormField(
+              style: const TextStyle(
+                color: Colors.white,
+              ),
               controller: controller.fullName,
               decoration: const InputDecoration(
                   label: Text(tFullName),
@@ -30,18 +33,30 @@ class SignUpFormWidget extends StatelessWidget {
             ),
             const SizedBox(height: tFormHeight - 10),
             TextFormField(
+              style: const TextStyle(
+                color: Colors.white,
+              ),
               controller: controller.email,
               decoration: const InputDecoration(
                   label: Text(tEmail), prefixIcon: Icon(Icons.email_outlined)),
             ),
             const SizedBox(height: tFormHeight - 10),
             TextFormField(
+              style: const TextStyle(
+                color: Colors.white,
+              ),
               controller: controller.phoneNo,
               decoration: const InputDecoration(
                   label: Text(tPhoneNo), prefixIcon: Icon(Icons.numbers)),
             ),
             const SizedBox(height: tFormHeight - 10),
             TextFormField(
+              obscureText: true,
+              enableSuggestions: false,
+              autocorrect: false,
+              style: const TextStyle(
+                color: Colors.white,
+              ),
               controller: controller.password,
               decoration: const InputDecoration(
                   label: Text(tPassword), prefixIcon: Icon(Icons.fingerprint)),

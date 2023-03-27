@@ -3,21 +3,6 @@ import 'package:flutter/material.dart';
 class TTextFormFieldTheme {
   TTextFormFieldTheme._();
 
-/*  decoration: InputDecoration(
-    prefixIcon: Icon(icon, color: Colors.white70,),
-    labelText: text,
-    labelStyle: TextStyle(color: Colors.white.withOpacity(0.9)),
-    filled: true,
-    enabledBorder: OutlineInputBorder(
-      borderRadius: BorderRadius.circular(100),
-      borderSide: BorderSide(color: Colors.white, width: 2),
-    ),
-    focusedBorder: OutlineInputBorder(
-      borderRadius: BorderRadius.circular(100),
-      borderSide: BorderSide(color: Colors.white, width: 2),
-    ),
-  ),*/
-
   static InputDecorationTheme lightInputDecorationTheme =
        InputDecorationTheme(
         enabledBorder: OutlineInputBorder(

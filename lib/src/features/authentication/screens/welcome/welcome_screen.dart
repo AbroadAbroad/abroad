@@ -1,9 +1,9 @@
 import 'package:abroad/src/constants/sizes.dart';
 import 'package:abroad/src/features/authentication/screens/signup/signup_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 import '../../../../constants/text_strings.dart';
+import '../login/login_screen.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
@@ -13,8 +13,8 @@ class WelcomeScreen extends StatelessWidget {
     var height = MediaQuery.of(context).size.height;
     return Scaffold(
       body: Container(
-        padding: EdgeInsets.all(tDefaultSize),
-        decoration: BoxDecoration(
+        padding: const EdgeInsets.all(tDefaultSize),
+        decoration: const BoxDecoration(
           image: DecorationImage(
               image: AssetImage("assets/images/welcome_images/welcome-screen-background.png"),
               fit: BoxFit.cover,
@@ -23,7 +23,7 @@ class WelcomeScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Image(image: AssetImage("assets/images/welcome_images/welcome-screen-images.png"), height:height * 0.3 ,),
+            Image(image: const AssetImage("assets/images/welcome_images/welcome-screen-images.png"), height:height * 0.3 ,),
             Column(
               children: const [
                 Text(
@@ -48,26 +48,11 @@ class WelcomeScreen extends StatelessWidget {
             ),
             Column(
               children: [
-                OutlinedButton(onPressed: (){},
-                  child: Text(tLogin.toUpperCase(),
-                    style: TextStyle(color: Colors.white),),
-
-                  style: OutlinedButton.styleFrom(
-                    side: BorderSide(width:2, color: Colors.white),
-                    minimumSize: Size(200, 50),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 20,),
                 OutlinedButton(onPressed: (){
                   Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => SignUpScreen()),
+                    MaterialPageRoute(builder: (context) => const LoginScreen()),
                   );
                 },
-                    child: Text(tSignup.toUpperCase(),
-                      style: const TextStyle(color: Colors.white),),
 
                   style: OutlinedButton.styleFrom(
                     side: const BorderSide(width:2, color: Colors.white),
@@ -76,6 +61,25 @@ class WelcomeScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(30),
                     ),
                   ),
+                  child: const Text(tLogin,
+                    style: TextStyle(color: Colors.white),),
+                ),
+                const SizedBox(height: 20,),
+                OutlinedButton(onPressed: (){
+                  Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const SignUpScreen()),
+                  );
+                },
+
+                  style: OutlinedButton.styleFrom(
+                    side: const BorderSide(width:2, color: Colors.white),
+                    minimumSize: const Size(200, 50),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                  ),
+                    child: Text(tSignup.toUpperCase(),
+                      style: const TextStyle(color: Colors.white),),
                 ),
               ],
             )
