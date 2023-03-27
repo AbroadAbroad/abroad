@@ -20,8 +20,6 @@ class ProfileScreen extends StatelessWidget {
         elevation: 0,
         centerTitle: true,
         leading: IconButton(
-            splashColor: Colors.transparent,
-            highlightColor: Colors.transparent,
             onPressed: () => Get.back(),
             icon: const Icon(LineAwesomeIcons.angle_left)),
         title: Text(
