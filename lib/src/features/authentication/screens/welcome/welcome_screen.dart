@@ -15,15 +15,19 @@ class WelcomeScreen extends StatelessWidget {
       body: Container(
         padding: const EdgeInsets.all(tDefaultSize),
         decoration: const BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage("assets/images/welcome_images/welcome-screen-background.png"),
-              fit: BoxFit.cover,
-          )
-        ),
+            image: DecorationImage(
+          image: AssetImage(
+              "assets/images/welcome_images/welcome-screen-background.png"),
+          fit: BoxFit.cover,
+        )),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Image(image: const AssetImage("assets/images/welcome_images/welcome-screen-images.png"), height:height * 0.3 ,),
+            Image(
+              image: const AssetImage(
+                  "assets/images/welcome_images/welcome-screen-images.png"),
+              height: height * 0.3,
+            ),
             Column(
               children: const [
                 Text(
@@ -48,38 +52,48 @@ class WelcomeScreen extends StatelessWidget {
             ),
             Column(
               children: [
-                OutlinedButton(onPressed: (){
-                  Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const LoginScreen()),
-                  );
-                },
-
+                OutlinedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const LoginScreen()),
+                    );
+                  },
                   style: OutlinedButton.styleFrom(
-                    side: const BorderSide(width:2, color: Colors.white),
+                    side: const BorderSide(width: 2, color: Colors.white),
                     minimumSize: const Size(200, 50),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30),
                     ),
                   ),
-                  child: const Text(tLogin,
-                    style: TextStyle(color: Colors.white),),
+                  child: const Text(
+                    tLogin,
+                    style: TextStyle(color: Colors.white),
+                  ),
                 ),
-                const SizedBox(height: 20,),
-                OutlinedButton(onPressed: (){
-                  Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const SignUpScreen()),
-                  );
-                },
-
+                const SizedBox(
+                  height: 20,
+                ),
+                OutlinedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const SignUpScreen()),
+                    );
+                  },
                   style: OutlinedButton.styleFrom(
-                    side: const BorderSide(width:2, color: Colors.white),
+                    side: const BorderSide(width: 2, color: Colors.white),
                     minimumSize: const Size(200, 50),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30),
                     ),
                   ),
-                    child: Text(tSignup.toUpperCase(),
-                      style: const TextStyle(color: Colors.white),),
+                  child: const Text(
+                    tSignup,
+                    style: TextStyle(color: Colors.white),
+                  ),
                 ),
               ],
             )

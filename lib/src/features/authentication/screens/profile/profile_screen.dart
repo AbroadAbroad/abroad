@@ -146,10 +146,14 @@ class ProfileScreen extends StatelessWidget {
                 onPress: () {
                   Get.defaultDialog(
                     title: "LOGOUT",
-                    titleStyle: const TextStyle(fontSize: 20),
+                    titleStyle: GoogleFonts.montserrat(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold
+                    ),
                     content: const Padding(
-                      padding: EdgeInsets.symmetric(vertical: 15.0),
-                      child: Text("Are you sure, you want to Logout?"),
+                      padding: EdgeInsets.fromLTRB(20,15,20,15),
+                      child: Text("Are you sure, you want to Logout?",
+                      textAlign: TextAlign.center,),
                     ),
                     confirm: Expanded(
                       child: ElevatedButton(

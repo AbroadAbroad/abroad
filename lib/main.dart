@@ -7,8 +7,10 @@ import 'package:abroad/src/features/authentication/screens/welcome/welcome_scree
 import 'package:abroad/src/utils/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'firebase_options.dart';
+
 
 void main()async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,11 +22,12 @@ void main()async {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       theme: TAppTheme.lightTheme,
       themeMode: ThemeMode.light,
-      home: ProfileScreen(),
+      home: WelcomeScreen(),
     );
   }
 }

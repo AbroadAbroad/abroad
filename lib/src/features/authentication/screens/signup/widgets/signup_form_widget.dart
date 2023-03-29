@@ -2,6 +2,7 @@ import 'package:abroad/src/features/authentication/controllers/signup_controller
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../../../../models/user_model.dart';
 import '../../../../../constants/sizes.dart';
 import '../../../../../constants/text_strings.dart';
 
@@ -65,14 +66,30 @@ class SignUpFormWidget extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               child: OutlinedButton(
-                onPressed: () {
-                  if(_formKey.currentState!.validate()){
-                    SignUpController.instance.registerUser(controller.email.text.trim(), controller.password.text.trim());
+                onPressed: () async {
+                  if (_formKey.currentState!.validate()) {
+                    bool isAuthSuccessful = await SignUpController.instance.registerUser(
+                        controller.email.text.trim(),
+                        controller.password.text.trim()
+                    );
+                    if(isAuthSuccessful) {
+                      final user = UserModel(
+                        email: controller.email.text.trim(),
+                        password: controller.password.text.trim(),
+                        fullName: controller.fullName.text.trim(),
+                        phoneNo: controller.phoneNo.text.trim(),
+                      );
+
+                      SignUpController.instance.createUser(user);
+                    }
+                    //Phone Authentication here
                   }
                 },
-                child: const Text(tSignup,
-                style: TextStyle(color: Colors.white,
-                fontWeight: FontWeight.bold),),
+                child: const Text(
+                  tSignup,
+                  style: TextStyle(
+                      color: Colors.white, fontWeight: FontWeight.bold),
+                ),
               ),
             )
           ],

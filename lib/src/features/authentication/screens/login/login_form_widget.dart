@@ -5,19 +5,24 @@ import 'package:get/get.dart';
 
 import '../../../../constants/sizes.dart';
 
-class LoginForm extends StatelessWidget {
-  const LoginForm({
-    super.key,
-  });
+class LoginForm extends StatefulWidget {
+  const LoginForm({Key? key}) : super(key: key);
+
+  @override
+  State<LoginForm> createState() => _LoginFormState();
+}
+
+class _LoginFormState extends State<LoginForm> {
+  final controller = Get.put(LoginController());
+  final _formKey = GlobalKey<FormState>();
+  bool _obscurePassword = true;
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(LoginController());
-    final _formKey = GlobalKey<FormState>();
     return Form(
       key: _formKey,
       child: Container(
-        padding: const EdgeInsets.symmetric(vertical: tFormHeight ),
+        padding: const EdgeInsets.symmetric(vertical: tFormHeight),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -30,21 +35,24 @@ class LoginForm extends StatelessWidget {
                 prefixIcon: const Icon(Icons.person_outline_outlined),
                 prefixIconColor: Colors.white,
                 labelText: tEmail,
-                labelStyle: TextStyle(color: Colors.white.withOpacity(0.9)),
+                labelStyle:
+                    TextStyle(color: Colors.white.withOpacity(0.9)),
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(100),
-                  borderSide: const BorderSide(color: Colors.white, width: 2),
+                  borderSide:
+                      const BorderSide(color: Colors.white, width: 2),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(100),
-                  borderSide: const BorderSide(color: Colors.white, width: 2),
+                  borderSide:
+                      const BorderSide(color: Colors.white, width: 2),
                 ),
               ),
             ),
             const SizedBox(height: tFormHeight),
             TextFormField(
               controller: controller.password,
-              obscureText: true,
+              obscureText: _obscurePassword,
               enableSuggestions: false,
               autocorrect: false,
               style: const TextStyle(
@@ -54,39 +62,59 @@ class LoginForm extends StatelessWidget {
                 prefixIcon: const Icon(Icons.fingerprint),
                 prefixIconColor: Colors.white,
                 labelText: tPassword,
-                labelStyle: TextStyle(color: Colors.white.withOpacity(0.9)),
-                suffixIcon: const IconButton(
-                    onPressed: null,
-                    icon: Icon(Icons.remove_red_eye_sharp),),
+                labelStyle:
+                    TextStyle(color: Colors.white.withOpacity(0.9)),
+                suffixIcon: IconButton(
+                  onPressed: () {
+                    setState(() {
+                      _obscurePassword = !_obscurePassword;
+                    });
+                  },
+                  icon: Icon(
+                    color: Colors.white54,
+                    _obscurePassword
+                        ? Icons.visibility_off_outlined
+                        : Icons.visibility_outlined,
+                  ),
+                ),
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(100),
-                  borderSide: const BorderSide(color: Colors.white, width: 2),
+                  borderSide:
+                      const BorderSide(color: Colors.white, width: 2),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(100),
-                  borderSide: const BorderSide(color: Colors.white, width: 2),
+                  borderSide:
+                      const BorderSide(color: Colors.white, width: 2),
                 ),
               ),
             ),
-            const SizedBox(height: tFormHeight -30,),
-            Align(alignment: Alignment.centerRight, child: TextButton(
-                onPressed: (){},
+            const SizedBox(height: tFormHeight - 30),
+            Align(
+              alignment: Alignment.centerRight,
+              child: TextButton(
+                onPressed: () {},
                 child: const Text(
-                    tForgetPassword,
-                style: TextStyle(
+                  tForgetPassword,
+                  style: TextStyle(
                     color: Colors.white,
-                fontSize: 12),
-                )
+                    fontSize: 12,
+                  ),
+                ),
               ),
             ),
             const SizedBox(height: tDefaultSize),
             SizedBox(
               width: double.infinity,
-              child: ElevatedButton(onPressed: (){
-                if(_formKey.currentState!.validate()){
-                  LoginController.instance.loginUser(controller.email.text.trim(), controller.password.text.trim());
-                }
-              },
+              child: ElevatedButton(
+                onPressed: () {
+                  if (_formKey.currentState!.validate()) {
+                    LoginController.instance.loginUser(
+                      controller.email.text.trim(),
+                      controller.password.text.trim(),
+                    );
+                  }
+                },
                 style: ElevatedButton.styleFrom(
                   minimumSize: const Size(320, 50),
                   shape: RoundedRectangleBorder(

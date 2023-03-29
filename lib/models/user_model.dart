@@ -1,6 +1,6 @@
 class UserModel {
   final String? id;
-  final String? userName;
+  final String? fullName;
   final String? email;
   final String? phoneNo;
   final String? password;
@@ -9,14 +9,14 @@ class UserModel {
     this.id,
     required this.email,
     required this.password,
-    required this.userName,
+    required this.fullName,
     required this.phoneNo,
   });
 
 
   toJson(){
     return{
-      "FullName": userName,
+      "FullName": fullName,
       "Email": email,
       "Phone": phoneNo,
       "Password": password,

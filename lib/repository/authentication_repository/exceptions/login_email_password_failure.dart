@@ -3,20 +3,22 @@ class LogInWithEmailAndPasswordFailure {
 
   const LogInWithEmailAndPasswordFailure([this.message = "An Unknown error occurred."]);
 
-  factory LogInWithEmailAndPasswordFailure.fromCode(String code){
-    switch(code){
-      case 'weak-password':
-        return const LogInWithEmailAndPasswordFailure('Please enter a stronger password.');
+  factory LogInWithEmailAndPasswordFailure.fromCode(String fromCode){
+    switch(fromCode){
       case 'invalid-email':
         return const LogInWithEmailAndPasswordFailure('Email is not valid or badly formatted.');
-      case 'email-already-in-use':
-        return const LogInWithEmailAndPasswordFailure('An account already exists for that email.');
       case 'operation-not-allowed':
         return const LogInWithEmailAndPasswordFailure('Operation is not allowed. Please contact support');
       case 'user-disabled':
         return const LogInWithEmailAndPasswordFailure('This user has been disabled. Please contact support for help.');
+      case 'user-not-found':
+        return const LogInWithEmailAndPasswordFailure('User not found. Please check your credentials or sign up.');
+      case 'wrong-password':
+        return const LogInWithEmailAndPasswordFailure('Wrong password. Please check your credentials or reset your password.');
+      case 'too-many-requests':
+        return const LogInWithEmailAndPasswordFailure('Too many requests. Please try again later.');
       default:
-        return const LogInWithEmailAndPasswordFailure();
+        return LogInWithEmailAndPasswordFailure("An unknown error occurred. Error code: $fromCode. Please try again later.");
     }
   }
 }
