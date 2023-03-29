@@ -1,6 +1,7 @@
 import 'package:abroad/src/constants/sizes.dart';
 import 'package:abroad/src/features/authentication/screens/signup/signup_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../../../../constants/text_strings.dart';
 import '../login/login_screen.dart';
@@ -26,25 +27,26 @@ class WelcomeScreen extends StatelessWidget {
             Image(
               image: const AssetImage(
                   "assets/images/welcome_images/welcome-screen-images.png"),
-              height: height * 0.3,
+              height: height * 0.25,
             ),
             Column(
-              children: const [
+              children: [
                 Text(
                   tWelcomeTile,
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 30,
+                  style: GoogleFonts.montserrat(
                     fontWeight: FontWeight.bold,
+                    fontSize: 22,
+                    color: Colors.white,
                   ),
                   textAlign: TextAlign.start,
                 ),
                 SizedBox(height: tFormHeight - 10),
                 Text(
                   tWelcomeSubTile,
-                  style: TextStyle(
+                  style: GoogleFonts.poppins(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 12,
                     color: Colors.white,
-                    fontSize: 14,
                   ),
                   textAlign: TextAlign.center,
                 ),

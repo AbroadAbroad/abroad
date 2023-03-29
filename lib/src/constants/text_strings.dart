@@ -9,8 +9,8 @@ const String tPhoneNo = "Phone Number";
 
 
 // Welcome Screen Text
-const String tWelcomeTile = "Welcome!";
-const String tWelcomeSubTile = "Log in with your data that you entered during your registration.";
+const String tWelcomeTile = "Welcome to Abroad!";
+const String tWelcomeSubTile = "We're thrilled to have you join our community.";
 
 // Login Screen Text
 const String tLoginTitle = "Welcome Back!";
