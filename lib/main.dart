@@ -1,4 +1,6 @@
 import 'package:abroad/repository/authentication_repository/authentication_repository.dart';
+import 'package:abroad/src/features/authentication/screens/home/home_screen.dart';
+import 'package:abroad/src/features/authentication/screens/profile/profile_screen.dart';
 import 'package:abroad/src/features/authentication/screens/welcome/welcome_screen.dart';
 import 'package:abroad/src/utils/theme/theme.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +19,7 @@ void main()async {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       theme: TAppTheme.lightTheme,

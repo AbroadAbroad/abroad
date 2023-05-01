@@ -7,6 +7,7 @@ import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 import '../../../../../repository/authentication_repository/authentication_repository.dart';
 import '../../../../constants/sizes.dart';
 import '../../../../constants/text_strings.dart';
+import '../update_profile_screen/update_profile_screen.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({Key? key}) : super(key: key);
@@ -95,7 +96,13 @@ class ProfileScreen extends StatelessWidget {
             SizedBox(
               width: 200,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const UpdateProfileScreen()),
+                  );
+                },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.transparent,
                   side: const BorderSide(color: Colors.white, width: 2),
@@ -147,13 +154,13 @@ class ProfileScreen extends StatelessWidget {
                   Get.defaultDialog(
                     title: "LOGOUT",
                     titleStyle: GoogleFonts.montserrat(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold
-                    ),
+                        fontSize: 20, fontWeight: FontWeight.bold),
                     content: const Padding(
-                      padding: EdgeInsets.fromLTRB(20,15,20,15),
-                      child: Text("Are you sure, you want to Logout?",
-                      textAlign: TextAlign.center,),
+                      padding: EdgeInsets.fromLTRB(20, 15, 20, 15),
+                      child: Text(
+                        "Are you sure, you want to Logout?",
+                        textAlign: TextAlign.center,
+                      ),
                     ),
                     confirm: Expanded(
                       child: ElevatedButton(

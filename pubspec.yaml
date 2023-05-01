@@ -52,6 +52,8 @@ dependencies:
   line_awesome_flutter: ^2.0.0
   page_transition: ^2.0.9
   flutter_launcher_icons: ^0.12.0
+  flutter_keyboard_visibility: ^5.4.1
+  avoid_keyboard: ^0.3.0
 
 
 dev_dependencies:
