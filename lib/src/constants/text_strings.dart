@@ -24,6 +24,13 @@ const String tSignUpTitle = "New Account";
 const String tSignUpSubTitle = "Sign Up and get started";
 const String tAlreadyHaveAnAccount = "Already have an account? ";
 
+// Forgot Password Screen Test
+const String tForgotPasswordTitle = "Forgot Password";
+const String tForgotPasswordSubTitle = "Enter your Email Address below \n we will send 4 digits code to your email ";
+const String tExampleEmail = "example@gmail.com";
+const String tRequestResetLink = "Request Reset Link";
+const String tBackToLogin = "Back To Login";
+
 
 // Profile Screen Text
 const String tProfile = "Profile";

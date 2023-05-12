@@ -1,4 +1,5 @@
 import 'package:abroad/repository/authentication_repository/authentication_repository.dart';
+import 'package:abroad/src/features/authentication/screens/forgot_password_screen/forgot_password_screen.dart';
 import 'package:abroad/src/features/authentication/screens/home/home_screen.dart';
 import 'package:abroad/src/features/authentication/screens/profile/profile_screen.dart';
 import 'package:abroad/src/features/authentication/screens/welcome/welcome_screen.dart';
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: TAppTheme.lightTheme,
       themeMode: ThemeMode.light,
-      home: WelcomeScreen(),
+      home: ForgotPasswordScreen(),
     );
   }
 }

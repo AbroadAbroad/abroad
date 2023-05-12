@@ -2,7 +2,8 @@
   import 'package:abroad/src/features/authentication/screens/profile/profile_screen.dart';
   import 'package:firebase_auth/firebase_auth.dart';
   import 'package:get/get.dart';
-  import '../../src/features/authentication/screens/welcome/welcome_screen.dart';
+  import '../../src/features/authentication/screens/forgot_password_screen/forgot_password_screen.dart';
+import '../../src/features/authentication/screens/welcome/welcome_screen.dart';
   import 'exceptions/login_email_password_failure.dart';
   import 'exceptions/signup_email_password_failure.dart';
 
@@ -28,7 +29,7 @@
     /// If we are setting initial screen from here
     /// then in the main.dart => App() add CircularProgressIndicator()
     _setInitialScreen(User? user) {
-      user == null ? Get.offAll(() => const WelcomeScreen()) : Get.offAll(() => const HomeScreen());
+      user == null ? Get.offAll(() => const WelcomeScreen()) : Get.offAll(() => const ForgotPasswordScreen());
     }
 
 
