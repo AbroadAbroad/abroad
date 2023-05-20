@@ -18,7 +18,8 @@ class WelcomeScreen extends StatelessWidget {
         decoration: const BoxDecoration(
             image: DecorationImage(
           image: AssetImage(
-              "assets/images/welcome_images/welcome-screen-background.png"),
+            "assets/images/welcome_images/welcome-screen-background.png",
+          ),
           fit: BoxFit.cover,
         )),
         child: Column(
@@ -28,6 +29,7 @@ class WelcomeScreen extends StatelessWidget {
               image: const AssetImage(
                   "assets/images/welcome_images/welcome-screen-images.png"),
               height: height * 0.25,
+              width: double.infinity,
             ),
             Column(
               children: [
@@ -40,7 +42,7 @@ class WelcomeScreen extends StatelessWidget {
                   ),
                   textAlign: TextAlign.start,
                 ),
-                SizedBox(height: tFormHeight - 10),
+                const SizedBox(height: tFormHeight - 10),
                 Text(
                   tWelcomeSubTile,
                   style: GoogleFonts.poppins(

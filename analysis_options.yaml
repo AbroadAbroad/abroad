@@ -1,3 +1,7 @@
+analyzer:
+  strong-mode:  true
+  errors:
+    mixin_inherits_from_not_object: ignore
 # This file configures the analyzer, which statically analyzes Dart code to
 # check for errors, warnings, and lints.
 #

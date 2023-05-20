@@ -1,6 +1,5 @@
 import 'package:abroad/repository/authentication_repository/authentication_repository.dart';
 import 'package:abroad/repository/user_repository/user_repository.dart';
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../../models/user_model.dart';
@@ -13,9 +12,9 @@ class ProfileController extends GetxController {
 
   getUserData() {
     final email = _authRepo.firebaseUser.value?.email;
-    if(email != null){
+    if (email != null) {
       return _userRepo.getUserDetails(email);
-    } else{
+    } else {
       Get.snackbar("Error", "Login to continue");
     }
   }

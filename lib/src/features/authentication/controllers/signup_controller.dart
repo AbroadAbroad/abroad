@@ -1,6 +1,5 @@
 import 'package:abroad/models/user_model.dart';
 import 'package:abroad/repository/user_repository/user_repository.dart';
-import 'package:abroad/src/features/authentication/screens/home/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../../repository/authentication_repository/authentication_repository.dart';

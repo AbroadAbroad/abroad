@@ -1,3 +1,6 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/cupertino.dart';
+
 class UserModel {
   final String? id;
   final String? fullName;
@@ -11,15 +14,26 @@ class UserModel {
     required this.password,
     required this.fullName,
     required this.phoneNo,
-
   });
 
-  toJson(){
+  toJson() {
     return {
       "FullName": fullName,
       "Email": email,
       "Phone": phoneNo,
-      "password": password,
+      "Password": password,
     };
+  }
+
+  factory UserModel.fromSnapShot(
+      DocumentSnapshot<Map<String, dynamic>> document) {
+    final data = document.data()!;
+    return UserModel(
+      id: document.id,
+      email: data["Email"],
+      password: data["Password"],
+      fullName: data["FullName"],
+      phoneNo: data["Phone"],
+    );
   }
 }

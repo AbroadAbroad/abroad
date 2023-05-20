@@ -24,12 +24,17 @@ const String tSignUpTitle = "New Account";
 const String tSignUpSubTitle = "Sign Up and get started";
 const String tAlreadyHaveAnAccount = "Already have an account? ";
 
-// Forgot Password Screen Test
+// Forgot Password Screen Text
 const String tForgotPasswordTitle = "Forgot Password";
 const String tForgotPasswordSubTitle = "Enter your Email Address below \n we will send 4 digits code to your email ";
 const String tExampleEmail = "example@gmail.com";
 const String tRequestResetLink = "Request Reset Link";
 const String tBackToLogin = "Back To Login";
+
+// Verification Screen Text
+const String tVerificationTitle = "Verification";
+const String tVerificationSubTitle = "Enter the four digit code that you \n received on your email ";
+const String tSubmit = "Submit";
 
 
 // Profile Screen Text
@@ -39,6 +44,7 @@ const String tLogoutDialogHeading = "Logout";
 const String tProfileHeading = "Ibrahim Essam";
 const String tProfileSubHeading = "Student";
 // Menu
+
 //const String tMenu5 = tlogout;
 const String tMenu1 = "Settings";
 const String tMenu4 = "Location";

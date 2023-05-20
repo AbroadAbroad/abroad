@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../../constants/sizes.dart';
+import '../forgot_password_screen/forgot_password_screen.dart';
 
 class LoginForm extends StatefulWidget {
   const LoginForm({Key? key}) : super(key: key);
@@ -35,17 +36,14 @@ class _LoginFormState extends State<LoginForm> {
                 prefixIcon: const Icon(Icons.person_outline_outlined),
                 prefixIconColor: Colors.white,
                 labelText: tEmail,
-                labelStyle:
-                    TextStyle(color: Colors.white.withOpacity(0.9)),
+                labelStyle: TextStyle(color: Colors.white.withOpacity(0.9)),
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(100),
-                  borderSide:
-                      const BorderSide(color: Colors.white, width: 2),
+                  borderSide: const BorderSide(color: Colors.white, width: 2),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(100),
-                  borderSide:
-                      const BorderSide(color: Colors.white, width: 2),
+                  borderSide: const BorderSide(color: Colors.white, width: 2),
                 ),
               ),
             ),
@@ -62,8 +60,7 @@ class _LoginFormState extends State<LoginForm> {
                 prefixIcon: const Icon(Icons.fingerprint),
                 prefixIconColor: Colors.white,
                 labelText: tPassword,
-                labelStyle:
-                    TextStyle(color: Colors.white.withOpacity(0.9)),
+                labelStyle: TextStyle(color: Colors.white.withOpacity(0.9)),
                 suffixIcon: IconButton(
                   onPressed: () {
                     setState(() {
@@ -79,13 +76,11 @@ class _LoginFormState extends State<LoginForm> {
                 ),
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(100),
-                  borderSide:
-                      const BorderSide(color: Colors.white, width: 2),
+                  borderSide: const BorderSide(color: Colors.white, width: 2),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(100),
-                  borderSide:
-                      const BorderSide(color: Colors.white, width: 2),
+                  borderSide: const BorderSide(color: Colors.white, width: 2),
                 ),
               ),
             ),
@@ -93,7 +88,12 @@ class _LoginFormState extends State<LoginForm> {
             Align(
               alignment: Alignment.centerRight,
               child: TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const ForgotPasswordScreen()));
+                },
                 child: const Text(
                   tForgetPassword,
                   style: TextStyle(

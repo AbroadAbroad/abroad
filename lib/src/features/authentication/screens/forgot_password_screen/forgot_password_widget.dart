@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../../constants/sizes.dart';
+import '../verification_screen/verification_screen.dart';
 
 class ForgotPasswordForm extends StatefulWidget {
   const ForgotPasswordForm({Key? key}) : super(key: key);
@@ -35,17 +36,14 @@ class _ForgotPasswordState extends State<ForgotPasswordForm> {
               decoration: InputDecoration(
                 hintText: tExampleEmail,
                 hintStyle: TextStyle(color: Colors.white),
-                labelStyle:
-                    TextStyle(color: Colors.white.withOpacity(0.9)),
+                labelStyle: TextStyle(color: Colors.white.withOpacity(0.9)),
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(100),
-                  borderSide:
-                      const BorderSide(color: Colors.white, width: 2),
+                  borderSide: const BorderSide(color: Colors.white, width: 2),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(100),
-                  borderSide:
-                      const BorderSide(color: Colors.white, width: 2),
+                  borderSide: const BorderSide(color: Colors.white, width: 2),
                 ),
               ),
             ),
@@ -55,12 +53,11 @@ class _ForgotPasswordState extends State<ForgotPasswordForm> {
                 width: 220,
                 child: ElevatedButton(
                   onPressed: () {
-                    if (_formKey.currentState!.validate()) {
-                      LoginController.instance.loginUser(
-                        controller.email.text.trim(),
-                        controller.password.text.trim(),
-                      );
-                    }
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                const VerificationScreen()));
                   },
                   style: ElevatedButton.styleFrom(
                     minimumSize: const Size(320, 50),

@@ -24,3 +24,4 @@ class CustomSnackBar extends GetSnackBar {
           ),
         );
 }
+

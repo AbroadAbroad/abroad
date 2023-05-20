@@ -26,3 +26,4 @@ class LoginController extends GetxController {
     password.clear();
   }
 }
+

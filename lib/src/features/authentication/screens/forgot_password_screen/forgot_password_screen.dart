@@ -1,9 +1,7 @@
 import 'package:abroad/src/constants/sizes.dart';
 import 'package:abroad/src/constants/text_strings.dart';
 import 'package:abroad/src/features/authentication/controllers/login_controller.dart';
-import 'package:abroad/src/features/authentication/screens/login/login_form_widget.dart';
 import 'package:abroad/src/features/authentication/screens/login/login_screen.dart';
-import 'package:abroad/src/features/authentication/screens/signup/signup_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -12,10 +10,8 @@ import 'forgot_password_widget.dart';
 class ForgotPasswordScreen extends StatelessWidget {
   const ForgotPasswordScreen({Key? key}) : super(key: key);
 
-
   @override
   Widget build(BuildContext context) {
-
     return SafeArea(
       child: SafeArea(
         child: Scaffold(
@@ -96,12 +92,11 @@ class ForgotPasswordScreen extends StatelessWidget {
                           width: double.infinity,
                           child: ElevatedButton(
                             onPressed: () {
-                              Navigator.pushReplacement(
+                              Navigator.push(
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) =>
-                                          const LoginScreen())
-                              );
+                                          const LoginScreen()));
                               LoginController.instance.clearTextFields();
                             },
                             style: ElevatedButton.styleFrom(
